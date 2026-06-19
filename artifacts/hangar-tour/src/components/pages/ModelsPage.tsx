@@ -35,7 +35,7 @@ export default function ModelsPage({ page, onNext, onPrev, step, total }: Props)
         onNext={onNext}
         onPrev={onPrev}
         prevLabel="← PREV PLANE"
-        nextLabel="NEXT PAGE →"
+        nextLabel="NEXT PLANE →"
       />
     </div>
   );

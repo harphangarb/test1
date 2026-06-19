@@ -34,8 +34,8 @@ export default function HistoryPage({ page, onNext, onPrev, step, total }: Props
         total={total}
         onNext={onNext}
         onPrev={onPrev}
-        prevLabel="← PREVIOUS PAGE"
-        nextLabel="NEXT PAGE →"
+        prevLabel="← PREV PLANE"
+        nextLabel="NEXT PLANE →"
       />
     </div>
   );

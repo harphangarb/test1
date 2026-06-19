@@ -38,9 +38,6 @@ export default function ThankYouPage({ page, onRestart }: Props) {
           </a>
         </div>
         <div className="thankyou-nav">
-          <button className="nav-prev" onClick={onRestart} aria-label="Previous">
-            ← PREVIOUS PAGE
-          </button>
           <button className="nav-next reset-btn" onClick={onRestart} aria-label="Reset tour">
             END &amp; RESET TOUR ↺
           </button>
