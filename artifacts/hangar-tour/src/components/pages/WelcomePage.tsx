@@ -1,5 +1,4 @@
 import { TourPage } from "@/data/tourData";
-import { AnchorIcon } from "@/components/icons/AnchorIcon";
 
 interface Props {
   page: TourPage;
@@ -11,9 +10,8 @@ export default function WelcomePage({ page, onStart }: Props) {
     <div className="welcome-page">
       <div className="welcome-bg" />
       <div className="welcome-content">
-        <div className="welcome-badge">
-          <AnchorIcon />
-          <span>H.A.R.P.</span>
+        <div className="welcome-logo-circle">
+          <img src="/harp-logo.png" alt="H.A.R.P. Logo" className="welcome-logo-img" />
         </div>
         <div className="welcome-logo-area">
           <h1 className="welcome-title">{page.title}</h1>
