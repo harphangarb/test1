@@ -15,8 +15,8 @@ export default function WelcomePage({ page, onStart }: Props) {
         </div>
         <div className="welcome-divider" />
         <div className="welcome-disclaimer">
-          <p className="disclaimer-label">SAFETY BRIEFING</p>
-          <p className="disclaimer-text">{page.content}</p>
+          <p className="disclaimer-label text-[16px]">NOTE:</p>
+          <p className="disclaimer-text text-[16px]">{page.content}</p>
         </div>
         <button className="start-btn" onClick={onStart}>
           <span>START TOUR</span>

@@ -26,7 +26,7 @@ export const tourPages: TourPage[] = [
     subtitle: "Floyd Bennett Field · Brooklyn, NY",
     type: "welcome",
     content:
-      "This self-guided tour is provided by the H.A.R.P. (Historic Aircraft Restoration Project) volunteers. Please keep a safe distance from all aircraft and displays. Do not touch the exhibits. Photography is encouraged — just be mindful of other visitors.",
+      "This is the self-guided version of our tour provided by H.A.R.P. (Historic Aircraft Restoration Project) volunteers. You are NOT ALLOWED to enter the C-47 and the Pelican without a volunteer. If you would like a guided tour led by one of our wonderful volunteers find someone inside the hangar!",
   },
   {
     id: 2,
