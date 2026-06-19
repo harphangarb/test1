@@ -1,7 +1,5 @@
 import { TourPage } from "@/data/tourData";
 import NavBar from "@/components/NavBar";
-import ProgressBar from "@/components/ProgressBar";
-import Header from "@/components/Header";
 import { planeImages } from "@/data/planeImages";
 
 interface Props {
@@ -19,9 +17,6 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
 
   return (
     <div className="inner-page">
-      <Header step={step} total={total} />
-      <ProgressBar step={step} total={total} />
-
       <div className="plane-image-wrap">
         {imgSrc ? (
           <img src={imgSrc} alt={page.title} className="plane-img" />
