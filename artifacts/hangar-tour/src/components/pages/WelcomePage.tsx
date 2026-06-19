@@ -28,7 +28,6 @@ export default function WelcomePage({ page, onStart }: Props) {
           <span>START TOUR</span>
           <span className="start-arrow">→</span>
         </button>
-        <p className="welcome-footer">20 Exhibits · Self-Guided · Floyd Bennett Field</p>
       </div>
     </div>
   );
