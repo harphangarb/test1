@@ -29,7 +29,6 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
       </div>
 
       <div className="inner-body">
-        <span className="phase-label">{page.phase}</span>
         <h2 className="plane-title">{page.title}</h2>
         {page.subtitle && <p className="plane-subtitle">{page.subtitle}</p>}
 
@@ -62,8 +61,7 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
         {page.harpFact && (
           <div className="harp-box">
             <div className="harp-box-header">
-              <span className="harp-anchor">⚓</span>
-              <span className="harp-label">H.A.R.P. FACT</span>
+              <span className="harp-label">FUN FACT</span>
             </div>
             <p className="harp-text">{page.harpFact}</p>
           </div>
@@ -75,7 +73,7 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
         total={total}
         onNext={onNext}
         onPrev={onPrev}
-        prevLabel="← PREV PLANE"
+        prevLabel={step === 2 ? "← HISTORY" : "← PREV PLANE"}
         nextLabel="NEXT PLANE →"
       />
     </div>

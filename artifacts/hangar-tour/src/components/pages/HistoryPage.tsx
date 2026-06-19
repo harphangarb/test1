@@ -15,7 +15,6 @@ export default function HistoryPage({ page, onNext, onPrev: _onPrev, step: _step
       <div className="inner-hero history-hero">
         <div className="inner-hero-overlay" />
         <div className="inner-hero-text">
-          <span className="phase-label">Phase 1 · Induction</span>
           <h2 className="inner-title">{page.title}</h2>
         </div>
       </div>

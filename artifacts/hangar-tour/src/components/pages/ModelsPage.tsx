@@ -16,7 +16,6 @@ export default function ModelsPage({ page, onNext, onPrev, step, total }: Props)
       <div className="inner-hero models-hero">
         <div className="inner-hero-overlay" />
         <div className="inner-hero-text">
-          <span className="phase-label">Phase 3 · Workshop</span>
           <h2 className="inner-title">{page.title}</h2>
         </div>
       </div>

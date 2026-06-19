@@ -339,7 +339,7 @@ export const tourPages: TourPage[] = [
   {
     id: 20,
     phase: "Debrief",
-    title: "Thank You",
+    title: "Thank You for Visiting",
     subtitle: "From the H.A.R.P. Angels",
     type: "thankyou",
     content:
