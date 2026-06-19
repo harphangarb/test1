@@ -1,5 +1,4 @@
 import { TourPage } from "@/data/tourData";
-import NavBar from "@/components/NavBar";
 
 interface Props {
   page: TourPage;
@@ -9,7 +8,7 @@ interface Props {
   total: number;
 }
 
-export default function HistoryPage({ page, onNext, onPrev, step, total }: Props) {
+export default function HistoryPage({ page, onNext, onPrev: _onPrev, step: _step, total: _total }: Props) {
   const paragraphs = page.content?.split("\n\n") ?? [];
   return (
     <div className="inner-page">
@@ -25,14 +24,11 @@ export default function HistoryPage({ page, onNext, onPrev, step, total }: Props
           <p key={i} className="body-text">{p}</p>
         ))}
       </div>
-      <NavBar
-        step={step}
-        total={total}
-        onNext={onNext}
-        onPrev={onPrev}
-        prevLabel="← PREV PLANE"
-        nextLabel="NEXT PLANE →"
-      />
+      <div className="navbar">
+        <button className="nav-next" onClick={onNext} aria-label="First plane">
+          FIRST PLANE →
+        </button>
+      </div>
     </div>
   );
 }
