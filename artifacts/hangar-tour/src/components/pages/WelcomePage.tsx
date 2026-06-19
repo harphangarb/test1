@@ -8,7 +8,6 @@ interface Props {
 export default function WelcomePage({ page, onStart }: Props) {
   return (
     <div className="welcome-page">
-      <div className="welcome-bg" />
       <div className="welcome-content">
         <div className="welcome-logo-circle">
           <img src="/harp-logo.png" alt="H.A.R.P. Logo" className="welcome-logo-img" />
