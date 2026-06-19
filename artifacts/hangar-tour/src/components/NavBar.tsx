@@ -3,9 +3,18 @@ interface Props {
   total: number;
   onNext: () => void;
   onPrev: () => void;
+  prevLabel?: string;
+  nextLabel?: string;
 }
 
-export default function NavBar({ step, total, onNext, onPrev }: Props) {
+export default function NavBar({
+  step,
+  total,
+  onNext,
+  onPrev,
+  prevLabel = "← PREVIOUS",
+  nextLabel = "NEXT →",
+}: Props) {
   const isFirst = step === 0;
   const isLast = step === total - 1;
 
@@ -17,7 +26,7 @@ export default function NavBar({ step, total, onNext, onPrev }: Props) {
         disabled={isFirst}
         aria-label="Previous"
       >
-        ← PREVIOUS
+        {prevLabel}
       </button>
       <button
         className="nav-next"
@@ -25,7 +34,7 @@ export default function NavBar({ step, total, onNext, onPrev }: Props) {
         disabled={isLast}
         aria-label="Next"
       >
-        NEXT →
+        {nextLabel}
       </button>
     </div>
   );

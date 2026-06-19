@@ -1,6 +1,7 @@
 import { TourPage } from "@/data/tourData";
 import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
+import Header from "@/components/Header";
 import { planeImages } from "@/data/planeImages";
 
 interface Props {
@@ -18,6 +19,7 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
 
   return (
     <div className="inner-page">
+      <Header step={step} total={total} />
       <ProgressBar step={step} total={total} />
 
       <div className="plane-image-wrap">
@@ -39,36 +41,67 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
         <h2 className="plane-title">{page.title}</h2>
         {page.subtitle && <p className="plane-subtitle">{page.subtitle}</p>}
 
-        {page.specs && page.specs.length > 0 && (
-          <div className="specs-banner">
-            {page.specs.map((s) => (
-              <div key={s.label} className="spec-item">
-                <span className="spec-label">{s.label}</span>
-                <span className="spec-value">{s.value}</span>
+        <div className="specs-grid">
+          <div className="spec-cell">
+            <span className="spec-label">BuNo</span>
+            <span className="spec-value">{page.buno ?? "—"}</span>
+          </div>
+          <div className="spec-cell">
+            <span className="spec-label">Role</span>
+            <span className="spec-value">{page.specs?.[0]?.value ?? "—"}</span>
+          </div>
+          <div className="spec-cell">
+            <span className="spec-label">Top Speed</span>
+            <span className="spec-value">{page.specs?.[1]?.value ?? "—"}</span>
+          </div>
+          <div className="spec-cell">
+            <span className="spec-label">Wingspan</span>
+            <span className="spec-value">{page.span ?? "—"}</span>
+          </div>
+        </div>
+
+        <div className="plane-columns">
+          <div className="plane-col-main">
+            {page.serviceHistory && (
+              <>
+                <h3 className="section-heading">SERVICE HISTORY</h3>
+                <p className="body-text">{page.serviceHistory}</p>
+              </>
+            )}
+            {page.specs && page.specs.length > 2 && (
+              <div className="extra-specs">
+                {page.specs.slice(2).map((s) => (
+                  <div key={s.label} className="extra-spec-row">
+                    <span className="extra-spec-label">{s.label}:</span>
+                    <span className="extra-spec-value">{s.value}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
-        )}
 
-        {page.serviceHistory && (
-          <div className="section-block">
-            <h3 className="section-heading">SERVICE HISTORY</h3>
-            <p className="body-text">{page.serviceHistory}</p>
+          <div className="plane-col-aside">
+            {page.harpFact && (
+              <div className="harp-box">
+                <div className="harp-box-header">
+                  <span className="harp-anchor">⚓</span>
+                  <span className="harp-label">H.A.R.P. FACT</span>
+                </div>
+                <p className="harp-text">{page.harpFact}</p>
+              </div>
+            )}
           </div>
-        )}
-
-        {page.harpFact && (
-          <div className="harp-box">
-            <div className="harp-box-header">
-              <span className="harp-anchor">⚓</span>
-              <span className="harp-label">H.A.R.P. VOLUNTEER FACT</span>
-            </div>
-            <p className="harp-text">{page.harpFact}</p>
-          </div>
-        )}
+        </div>
       </div>
 
-      <NavBar step={step} total={total} onNext={onNext} onPrev={onPrev} />
+      <NavBar
+        step={step}
+        total={total}
+        onNext={onNext}
+        onPrev={onPrev}
+        prevLabel="← PREV PLANE"
+        nextLabel="NEXT PLANE →"
+      />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { TourPage } from "@/data/tourData";
 import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
+import Header from "@/components/Header";
 
 interface Props {
   page: TourPage;
@@ -14,6 +15,7 @@ export default function ModelsPage({ page, onNext, onPrev, step, total }: Props)
   const paragraphs = page.content?.split("\n\n") ?? [];
   return (
     <div className="inner-page">
+      <Header step={step} total={total} />
       <ProgressBar step={step} total={total} />
       <div className="inner-hero models-hero">
         <div className="inner-hero-overlay" />
@@ -27,7 +29,14 @@ export default function ModelsPage({ page, onNext, onPrev, step, total }: Props)
           <p key={i} className="body-text">{p}</p>
         ))}
       </div>
-      <NavBar step={step} total={total} onNext={onNext} onPrev={onPrev} />
+      <NavBar
+        step={step}
+        total={total}
+        onNext={onNext}
+        onPrev={onPrev}
+        prevLabel="← PREV PLANE"
+        nextLabel="NEXT PAGE →"
+      />
     </div>
   );
 }

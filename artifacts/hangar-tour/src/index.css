@@ -702,6 +702,136 @@ html, body, #root {
 }
 
 /* ─────────────────────────────────────────────
+   SITE HEADER (persistent — hidden on welcome)
+───────────────────────────────────────────── */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 44px;
+  background: var(--navy-800);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.site-header-title {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.site-header-page {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--orange);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* ─────────────────────────────────────────────
+   4-COLUMN SPECS GRID
+───────────────────────────────────────────── */
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.spec-cell {
+  background: var(--card-bg);
+  padding: 9px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+/* ─────────────────────────────────────────────
+   TWO-COLUMN PLANE BODY LAYOUT
+───────────────────────────────────────────── */
+.plane-columns {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.plane-col-main {
+  flex: 3;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plane-col-aside {
+  flex: 2;
+  min-width: 0;
+}
+
+/* Extra spec rows (below the 4-col grid) */
+.extra-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.extra-spec-row {
+  display: flex;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.extra-spec-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--orange);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.extra-spec-value {
+  color: var(--off-white);
+  line-height: 1.4;
+}
+
+/* ─────────────────────────────────────────────
+   THANK YOU PAGE NAV ROW
+───────────────────────────────────────────── */
+.thankyou-nav {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.thankyou-nav .nav-prev {
+  flex: 0 0 auto;
+}
+
+.thankyou-nav .nav-next {
+  flex: 1;
+}
+
+.reset-btn {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+
+/* ─────────────────────────────────────────────
    Anchor SVG default size
 ───────────────────────────────────────────── */
 .anchor-svg {
