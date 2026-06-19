@@ -60,38 +60,22 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
           </div>
         </div>
 
-        <div className="plane-columns">
-          <div className="plane-col-main">
-            {page.serviceHistory && (
-              <>
-                <h3 className="section-heading">SERVICE HISTORY</h3>
-                <p className="body-text">{page.serviceHistory}</p>
-              </>
-            )}
-            {page.specs && page.specs.length > 2 && (
-              <div className="extra-specs">
-                {page.specs.slice(2).map((s) => (
-                  <div key={s.label} className="extra-spec-row">
-                    <span className="extra-spec-label">{s.label}:</span>
-                    <span className="extra-spec-value">{s.value}</span>
-                  </div>
-                ))}
-              </div>
-            )}
+        {page.serviceHistory && (
+          <div className="section-block">
+            <h3 className="section-heading">SERVICE HISTORY</h3>
+            <p className="body-text">{page.serviceHistory}</p>
           </div>
+        )}
 
-          <div className="plane-col-aside">
-            {page.harpFact && (
-              <div className="harp-box">
-                <div className="harp-box-header">
-                  <span className="harp-anchor">⚓</span>
-                  <span className="harp-label">H.A.R.P. FACT</span>
-                </div>
-                <p className="harp-text">{page.harpFact}</p>
-              </div>
-            )}
+        {page.harpFact && (
+          <div className="harp-box">
+            <div className="harp-box-header">
+              <span className="harp-anchor">⚓</span>
+              <span className="harp-label">H.A.R.P. FACT</span>
+            </div>
+            <p className="harp-text">{page.harpFact}</p>
           </div>
-        </div>
+        )}
       </div>
 
       <NavBar
