@@ -1,36 +1,48 @@
-# [Project name]
+# Hangar B Self-Guided Tour
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A mobile-optimized, 20-page interactive self-guided tour for Hangar B at Floyd Bennett Field (Brooklyn, NY), built for H.A.R.P. (Historic Aircraft Restoration Project). Designed to be used on visitors' phones inside the hangar — no internet required once loaded.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/hangar-tour run dev` — run the tour frontend (port 18341)
+- `pnpm --filter @workspace/api-server run dev` — run the API server (port 8080)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Frontend: React + Vite (no router — single `currentStep` state, 1–20)
+- CSS: hand-written mobile-first CSS (no Tailwind in use for tour pages)
+- Fonts: Oswald (display) + Inter (body) via Google Fonts
+- API: Express 5 (minimal, health-check only for this project)
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/hangar-tour/src/data/tourData.ts` — all 20 tour pages (title, specs, history, HARP facts)
+- `artifacts/hangar-tour/src/data/planeImages.ts` — Wikimedia image URLs keyed by page ID
+- `artifacts/hangar-tour/src/components/Tour.tsx` — root component, manages `currentStep` state
+- `artifacts/hangar-tour/src/components/pages/` — one file per page type (WelcomePage, HistoryPage, PlanePage, ModelsPage, ThankYouPage)
+- `artifacts/hangar-tour/src/components/NavBar.tsx` — sticky bottom PREVIOUS / NEXT bar
+- `artifacts/hangar-tour/src/components/ProgressBar.tsx` — top progress indicator
+- `artifacts/hangar-tour/src/index.css` — full custom CSS with Navy/orange/gold palette
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- **No router** — single React component with `currentStep` state (0–19). Clicking NEXT runs `currentStep++`. No page reloads, instant transitions. Perfect for hangar Wi-Fi conditions.
+- **Template-based plane pages** — all 16 fleet pages (IDs 3–18) share one `PlanePage` component; content comes from the `tourData.ts` data object.
+- **Sticky bottom nav** — PREVIOUS (gray, subdued) and NEXT (large orange CTA) stick to the bottom of the viewport so thumbs never have to reach far.
+- **Mobile-first CSS** — uses `dvh` units, `safe-area-inset-bottom`, and `-webkit-overflow-scrolling: touch` for smooth phone UX.
+- **Navy tactical palette** — `--navy-900` through `--navy-400`, `--orange` (#f97316), `--gold` (#d4a017) for the HARP fact boxes.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Visitors pick up their phone, open the tour, tap START TOUR and navigate through:
+- Page 1: Welcome & safety disclaimer
+- Page 2: History of Floyd Bennett Field
+- Pages 3–18: 16 aircraft/exhibit pages (photo, specs grid, service history, HARP volunteer fact)
+- Page 19: The Models (scale model display showcase)
+- Page 20: Thank You + donate/join CTA + restart button
 
 ## User preferences
 
@@ -38,7 +50,9 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Adding a new exhibit: add an entry to `tourData.ts` (increment `id`, set `type: "plane"`) and add its image URL to `planeImages.ts`.
+- Image URLs are from Wikimedia Commons — they load fine on most mobile connections. If the hangar has no internet, replace with locally bundled images.
+- Do NOT add the hangar-tour to the root `tsconfig.json` references (it's a leaf package).
 
 ## Pointers
 

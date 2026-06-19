@@ -1,0 +1,35 @@
+import { TourPage } from "@/data/tourData";
+import { AnchorIcon } from "@/components/icons/AnchorIcon";
+
+interface Props {
+  page: TourPage;
+  onStart: () => void;
+}
+
+export default function WelcomePage({ page, onStart }: Props) {
+  return (
+    <div className="welcome-page">
+      <div className="welcome-bg" />
+      <div className="welcome-content">
+        <div className="welcome-badge">
+          <AnchorIcon />
+          <span>H.A.R.P.</span>
+        </div>
+        <div className="welcome-logo-area">
+          <h1 className="welcome-title">{page.title}</h1>
+          {page.subtitle && <p className="welcome-subtitle">{page.subtitle}</p>}
+        </div>
+        <div className="welcome-divider" />
+        <div className="welcome-disclaimer">
+          <p className="disclaimer-label">SAFETY BRIEFING</p>
+          <p className="disclaimer-text">{page.content}</p>
+        </div>
+        <button className="start-btn" onClick={onStart}>
+          <span>START TOUR</span>
+          <span className="start-arrow">→</span>
+        </button>
+        <p className="welcome-footer">20 Exhibits · Self-Guided · Floyd Bennett Field</p>
+      </div>
+    </div>
+  );
+}

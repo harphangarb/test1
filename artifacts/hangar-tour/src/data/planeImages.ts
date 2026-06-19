@@ -1,0 +1,18 @@
+export const planeImages: Record<number, string> = {
+  3: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/North_American_AT-6_Texan_USAF.jpg/1200px-North_American_AT-6_Texan_USAF.jpg",
+  4: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Grumman_HU-16B_Albatross_NAS_Pax_1966.jpg/1200px-Grumman_HU-16B_Albatross_NAS_Pax_1966.jpg",
+  5: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Douglas_C-47_Skytrain.jpg/1200px-Douglas_C-47_Skytrain.jpg",
+  6: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Douglas_A-4B_Skyhawk_in_flight_c1960.jpg/1200px-Douglas_A-4B_Skyhawk_in_flight_c1960.jpg",
+  7: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Grumman_G-21_Goose_N1306H.jpg/1200px-Grumman_G-21_Goose_N1306H.jpg",
+  8: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Nike_Ajax_missiles_1954.jpg/1200px-Nike_Ajax_missiles_1954.jpg",
+  9: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Beechcraft_C-45_Expeditor_YF-EAA.jpg/1200px-Beechcraft_C-45_Expeditor_YF-EAA.jpg",
+  10: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/USCG_HH-3F_Pelican_1984.jpg/1200px-USCG_HH-3F_Pelican_1984.jpg",
+  11: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lockheed_P-2H_Neptune_NAS_Patuxent_1962.jpg/1200px-Lockheed_P-2H_Neptune_NAS_Patuxent_1962.jpg",
+  12: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Nike_Hercules_2007.jpg/1200px-Nike_Hercules_2007.jpg",
+  13: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/North_American_SNJ-5_Texan.jpg/1200px-North_American_SNJ-5_Texan.jpg",
+  14: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/S-2_Tracker.jpg/1200px-S-2_Tracker.jpg",
+  15: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Boeing_Stearman_E75_1.jpg/1200px-Boeing_Stearman_E75_1.jpg",
+  16: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Consolidated_PBY-5A_Catalina_%28N9521C%29.jpg/1200px-Consolidated_PBY-5A_Catalina_%28N9521C%29.jpg",
+  17: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Wiley_Post_Winnie_Mae.jpg/1200px-Wiley_Post_Winnie_Mae.jpg",
+  18: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Fairchild_PT-26_Cornell.jpg/1200px-Fairchild_PT-26_Cornell.jpg",
+};

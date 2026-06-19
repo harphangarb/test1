@@ -1,0 +1,71 @@
+Got it. Keeping it strictly focused on planes, purely user-friendly, and optimizing the flow so it is perfectly tailored for a developer setting it up in Replit.
+
+Here is the precise, 20-page structure using the exact names you requested, designed to maintain that sleek, tactical Navy vibe while staying incredibly easy to navigate.
+
+Global Blueprint Rule for Replit
+Each plane page (Pages 3 to 18) uses the exact same layout template. You only have to write the code for the template once, then pull the text/images for each specific plane from a data object.
+
+Every single plane page features a universal Bottom Nav Bar:
+
+[ ← PREVIOUS PLANE ] (Subtle gray text/button)
+
+[ NEXT PLANE → ] (Huge, high-contrast Navy blue/orange button)
+
+The 20-Page Tour Architecture
+⚓ Phase 1: Induction (The Entrances)
+Page 1: Welcome & Disclaimer
+
+Layout: Full-screen bold background. Brief greeting welcoming users to Hangar B. Clear, required legal/safety disclaimer text.
+
+Action: One massive, centered, pulsating primary action button: [ START TOUR ].
+
+Page 2: History of Floyd Bennett Field
+
+Layout: Single-column storytelling page. Short history of how the site transformed from NYC's first municipal airport into a bustling WWII Naval Air Station.
+
+✈️ Phase 2: The Fleet (The Planes)
+Pages 3-18 all utilize the standardized, user-friendly layout: Top Image → Specs Banner → Service History → H.A.R.P. Volunteer Fact Box → Bottom Dual-Navigation.
+
+Page 3: The Yellow Plane (SNJ / AT-6 Trainer)
+
+Page 4: Grumman HU-16 Albatross
+
+Page 5: Douglas C-47 Skytrain
+
+Page 6: Douglas A-4 Skyhawk
+
+Page 7: Grumman G-21 Goose
+
+Page 8: Nike Ajax (Missile system displayed at the hangar)
+
+Page 9: Beechcraft JRB "Expeditor"
+
+Page 10: Pelican (HH-3F Coast Guard Helicopter)
+
+Page 11: Lockheed P-2 Neptune
+
+Page 12: Nike Hercules (Heavy air-defense missile asset)
+
+Page 13: Curtiss-Wright SNJ-2
+
+Page 14: Grumman S-2 Tracker
+
+Page 15: Boeing Stearman
+
+Page 16: Consolidated PBY-5 Catalina
+
+Page 17: Winnie Mae (Lockheed Vega 5B Full-Scale Replica)
+
+Page 18: Fairchild PT-26 Cornell
+
+🛠️ Phase 3: The Workshop & Debrief (The Exit)
+Page 19: The Models
+
+Layout: Dedicated page highlighting the smaller scale display models showcased around Hangar B, honoring the craft of the volunteers who build them.
+
+Page 20: Thank You
+
+Layout: Closing debriefing page. A thank you message from the H.A.R.P. "Angels" (the volunteer restoration team), details on how to donate or join the project, and a final button to reset the tour back to Page 1.
+
+💻 Replit Dev Tip for Smooth UX
+To make it highly user-friendly on mobile phones inside a hangar, use a simple currentStep state variable ranging from 1 to 20. Clicking the "Next Plane" button simply runs currentStep++ and loads the next array item instantly without reloading the browser window!
