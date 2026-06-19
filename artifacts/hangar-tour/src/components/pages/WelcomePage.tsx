@@ -9,9 +9,6 @@ export default function WelcomePage({ page, onStart }: Props) {
   return (
     <div className="welcome-page">
       <div className="welcome-content">
-        <div className="welcome-logo-circle">
-          <img src="/harp-logo.png" alt="H.A.R.P. Logo" className="welcome-logo-img" />
-        </div>
         <div className="welcome-logo-area">
           <h1 className="welcome-title">{page.title}</h1>
           {page.subtitle && <p className="welcome-subtitle">{page.subtitle}</p>}
