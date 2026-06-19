@@ -26,9 +26,6 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
           </div>
         )}
         <div className="plane-image-overlay" />
-        <div className="plane-num-badge">
-          <span className="plane-num-text">{planeNumber} / {totalPlanes}</span>
-        </div>
       </div>
 
       <div className="inner-body">
