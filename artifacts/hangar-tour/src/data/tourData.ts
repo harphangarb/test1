@@ -40,27 +40,19 @@ export const tourPages: TourPage[] = [
     id: 3,
     phase: "The Fleet",
     title: "The Yellow Plane",
-    subtitle: "North American SNJ / AT-6 Texan",
+    subtitle: "Based on the Piper J-3 Cub",
     type: "plane",
-    buno: "12345",
-    span: "42 ft",
-    specs: [
-      { label: "Role", value: "Advanced Trainer" },
-      { label: "Top Speed", value: "208 mph" },
-      { label: "Engine", value: "P&W R-1340 Wasp, 600 hp" },
-      { label: "Range", value: "750 miles" },
-    ],
     serviceHistory:
-      "Universally known as the Texan to the USAAF and Harvard to the British Commonwealth, the AT-6 was the finishing school for nearly every Allied pilot in World War II. Over 17,000 were built. Virtually every fighter and bomber pilot who flew in combat logged hours in this aircraft before they ever saw battle.",
+      "This bright yellow plane was made in the backyard of someone's home on Long Island. The plane's control systems for the wings still work; ask a volunteer to show you!",
     harpFact:
-      "H.A.R.P. volunteers stripped this aircraft to bare metal and painstakingly re-applied its distinctive bright yellow training scheme. That color saved lives — it made trainers instantly visible to avoid mid-air collisions during the chaotic training rush of WWII.",
+      "This plane never left the ground! Its engine was never complete, and it has never taken off!",
   },
   {
     id: 4,
     phase: "The Fleet",
     title: "Grumman HU-16 Albatross",
     type: "plane",
-    buno: "67890",
+    buno: "7216",
     span: "96 ft",
     specs: [
       { label: "Role", value: "Search & Rescue Amphibian" },

@@ -12,8 +12,8 @@ interface Props {
 
 export default function PlanePage({ page, onNext, onPrev, step, total }: Props) {
   const imgSrc = planeImages[page.id] ?? null;
-  const planeNumber = page.id - 2;
-  const totalPlanes = 16;
+  const isYellowPlane = page.id === 3;
+  const showBuno = page.buno && page.buno !== "N/A";
 
   return (
     <div className="inner-page">
@@ -32,28 +32,32 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
         <h2 className="plane-title">{page.title}</h2>
         {page.subtitle && <p className="plane-subtitle">{page.subtitle}</p>}
 
-        <div className="specs-grid">
-          <div className="spec-cell">
-            <span className="spec-label">BuNo</span>
-            <span className="spec-value">{page.buno ?? "—"}</span>
+        {!isYellowPlane && (
+          <div className="specs-grid">
+            {showBuno && (
+              <div className="spec-cell">
+                <span className="spec-label">BuNo</span>
+                <span className="spec-value">{page.buno}</span>
+              </div>
+            )}
+            <div className="spec-cell">
+              <span className="spec-label">Role</span>
+              <span className="spec-value">{page.specs?.[0]?.value ?? "—"}</span>
+            </div>
+            <div className="spec-cell">
+              <span className="spec-label">Top Speed</span>
+              <span className="spec-value">{page.specs?.[1]?.value ?? "—"}</span>
+            </div>
+            <div className="spec-cell">
+              <span className="spec-label">Wingspan</span>
+              <span className="spec-value">{page.span ?? "—"}</span>
+            </div>
           </div>
-          <div className="spec-cell">
-            <span className="spec-label">Role</span>
-            <span className="spec-value">{page.specs?.[0]?.value ?? "—"}</span>
-          </div>
-          <div className="spec-cell">
-            <span className="spec-label">Top Speed</span>
-            <span className="spec-value">{page.specs?.[1]?.value ?? "—"}</span>
-          </div>
-          <div className="spec-cell">
-            <span className="spec-label">Wingspan</span>
-            <span className="spec-value">{page.span ?? "—"}</span>
-          </div>
-        </div>
+        )}
 
         {page.serviceHistory && (
           <div className="section-block">
-            <h3 className="section-heading">SERVICE HISTORY</h3>
+            <h3 className="section-heading">{isYellowPlane ? "OVERVIEW" : "SERVICE HISTORY"}</h3>
             <p className="body-text">{page.serviceHistory}</p>
           </div>
         )}

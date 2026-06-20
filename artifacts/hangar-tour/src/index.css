@@ -183,7 +183,8 @@ html, body, #root {
 }
 
 .start-arrow {
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 1;
 }
 
 @keyframes pulse-glow {
@@ -489,6 +490,10 @@ html, body, #root {
 
 .nav-prev {
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   background: transparent;
   color: var(--muted);
   border: 1px solid var(--border);
@@ -501,6 +506,7 @@ html, body, #root {
   transition: color 0.15s, border-color 0.15s;
   -webkit-user-select: none;
   user-select: none;
+  line-height: 1;
 }
 
 .nav-prev:disabled {
@@ -515,6 +521,10 @@ html, body, #root {
 
 .nav-next {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   background: var(--orange);
   color: var(--white);
   border: none;
@@ -528,6 +538,7 @@ html, body, #root {
   transition: background 0.15s, transform 0.1s;
   -webkit-user-select: none;
   user-select: none;
+  line-height: 1;
 }
 
 .nav-next:disabled {
@@ -849,4 +860,20 @@ html, body, #root {
 }
 .replit-badge {
   display: none !important;
+}
+/* Custom override to hide or cover platform branding overlay badges */
+iframe[src*="replit"], 
+div[class*="replit"], 
+a[href*="replit"],
+[id*="replit"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Fallback: Ensure your app elements stay layered entirely on top */
+#root {
+  position: relative;
+  z-index: 999999 !important;
 }
