@@ -38,8 +38,8 @@ export default function NavBar({
         disabled={isFirst}
         aria-label="Previous"
       >
-        <span className="btn-arrow">{prev.arrow}</span>
         <span className="btn-text">{prev.text}</span>
+        <span className="btn-arrow">{prev.arrow}</span>
       </button>
       <button
         className="nav-next"
