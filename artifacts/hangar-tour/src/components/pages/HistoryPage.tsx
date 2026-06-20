@@ -25,7 +25,8 @@ export default function HistoryPage({ page, onNext, onPrev: _onPrev, step: _step
       </div>
       <div className="navbar">
         <button className="nav-next" onClick={onNext} aria-label="First plane">
-          FIRST PLANE →
+          <span className="btn-text">FIRST PLANE</span>
+          <span className="btn-arrow">→</span>
         </button>
       </div>
     </div>

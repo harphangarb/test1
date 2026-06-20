@@ -33,7 +33,7 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
         {page.subtitle && <p className="plane-subtitle">{page.subtitle}</p>}
 
         {!isYellowPlane && (
-          <div className="specs-grid">
+          <div className={`specs-grid${!showBuno ? " specs-grid--3col" : ""}`}>
             {showBuno && (
               <div className="spec-cell">
                 <span className="spec-label">BuNo</span>

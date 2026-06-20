@@ -491,22 +491,24 @@ html, body, #root {
 .nav-prev {
   flex: 0 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 2px;
   background: transparent;
   color: var(--muted);
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 10px 13px;
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 2px;
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
   -webkit-user-select: none;
   user-select: none;
   line-height: 1;
+  min-width: 80px;
 }
 
 .nav-prev:disabled {
@@ -522,22 +524,35 @@ html, body, #root {
 .nav-next {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 2px;
   background: var(--orange);
   color: var(--white);
   border: none;
   border-radius: 4px;
   padding: 11px 16px;
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
   cursor: pointer;
   transition: background 0.15s, transform 0.1s;
   -webkit-user-select: none;
   user-select: none;
+  line-height: 1;
+}
+
+.btn-text {
+  font-size: inherit;
+  letter-spacing: inherit;
+  font-weight: inherit;
+  line-height: 1;
+}
+
+.btn-arrow {
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -747,12 +762,16 @@ html, body, #root {
 ───────────────────────────────────────────── */
 .specs-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
   border-radius: 4px;
   overflow: hidden;
+}
+
+.specs-grid--3col {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .spec-cell {
@@ -762,6 +781,7 @@ html, body, #root {
   flex-direction: column;
   gap: 3px;
   min-width: 0;
+  word-break: break-word;
 }
 
 /* ─────────────────────────────────────────────

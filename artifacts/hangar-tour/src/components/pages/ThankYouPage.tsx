@@ -13,7 +13,6 @@ export default function ThankYouPage({ page, onRestart }: Props) {
       <div className="thankyou-content">
         <h2 className="thankyou-title">Thank You for Visiting</h2>
         <p className="thankyou-from">from the H.A.R.P. Volunteers</p>
-        {page.subtitle && <p className="thankyou-subtitle">{page.subtitle}</p>}
         <div className="thankyou-divider" />
         <div className="thankyou-body">
           {paragraphs.map((p, i) => (
