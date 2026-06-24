@@ -1,5 +1,6 @@
 import { TourPage } from "@/data/tourData";
 import NavBar from "@/components/NavBar";
+import ImageCarousel from "@/components/ImageCarousel";
 import { planeImages } from "@/data/planeImages";
 
 interface Props {
@@ -11,22 +12,27 @@ interface Props {
 }
 
 export default function PlanePage({ page, onNext, onPrev, step, total }: Props) {
-  const imgSrc = planeImages[page.id] ?? null;
+  const imgData = planeImages[page.id] ?? null;
   const isYellowPlane = page.id === 3;
   const showBuno = page.buno && page.buno !== "N/A";
+  const isCarousel = Array.isArray(imgData);
 
   return (
     <div className="inner-page">
-      <div className="plane-image-wrap">
-        {imgSrc ? (
-          <img src={imgSrc} alt={page.title} className="plane-img" />
-        ) : (
-          <div className="plane-img-placeholder">
-            <span className="placeholder-icon">✈</span>
-          </div>
-        )}
-        <div className="plane-image-overlay" />
-      </div>
+      {isCarousel ? (
+        <ImageCarousel images={imgData} alt={page.title} />
+      ) : (
+        <div className="plane-image-wrap">
+          {imgData ? (
+            <img src={imgData as string} alt={page.title} className="plane-img" />
+          ) : (
+            <div className="plane-img-placeholder">
+              <span className="placeholder-icon">✈</span>
+            </div>
+          )}
+          <div className="plane-image-overlay" />
+        </div>
+      )}
 
       <div className="inner-body">
         <h2 className="plane-title">{page.title}</h2>
