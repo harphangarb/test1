@@ -4,12 +4,12 @@ export const planeImages: Record<number, string | PlaneImage[]> = {
   3: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/North_American_AT-6_Texan_USAF.jpg/1200px-North_American_AT-6_Texan_USAF.jpg",
   4: [
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Grumman_HU-16B_Albatross_NAS_Pax_1966.jpg/1200px-Grumman_HU-16B_Albatross_NAS_Pax_1966.jpg",
-      caption: "HU-16B Albatross on the ramp at NAS Patuxent River, 1966. This is the same model as the one in Hangar B — note the distinctive gull wing and boat hull designed for open-ocean landings.",
+      src: "/albatross-1.jpg",
+      caption: "The Albatross (BuNo 7216) as she sits today in Hangar B. Restored in Coast Guard rescue colors, she's one of the finest examples of an HU-16 anywhere — that boat hull beneath the fuselage let her land on open ocean in seas up to 6 feet.",
     },
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Grumman_HU-16B_Albatross%2C_Norway_-_Air_Force_AN1096735.jpg/1200px-Grumman_HU-16B_Albatross%2C_Norway_-_Air_Force_AN1096735.jpg",
-      caption: "A Norwegian Air Force HU-16 Albatross — the type served with more than a dozen nations. Its versatility in rough-water operations made it one of the most exported American patrol amphibians of the Cold War era.",
+      src: "/albatross-2.png",
+      caption: "BuNo 7216 on the ramp in her working days, based out of Miami, FL with the U.S. Coast Guard. The engines are running — she may be minutes from a search-and-rescue mission over the Atlantic.",
     },
   ],
   5: [
