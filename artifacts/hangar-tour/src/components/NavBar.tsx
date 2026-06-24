@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { planeImages } from "@/data/planeImages";
+
 interface Props {
   step: number;
   total: number;
@@ -29,6 +32,25 @@ export default function NavBar({
   const isLast = step === total - 1;
   const prev = splitPrev(prevLabel);
   const next = splitNext(nextLabel);
+
+  // Background Preloader Engine
+  useEffect(() => {
+    // Determine the upcoming index (plane indexes generally map directly to tour steps)
+    const nextStepIndex = step + 1;
+    const nextPlaneData = planeImages[nextStepIndex];
+
+    if (nextPlaneData) {
+      // Resolve source whether data signature is structured string or image object array
+      const targetSrc = Array.isArray(nextPlaneData)
+        ? nextPlaneData[0]?.src
+        : nextPlaneData;
+
+      if (targetSrc) {
+        const preloadImage = new Image();
+        preloadImage.src = targetSrc;
+      }
+    }
+  }, [step]);
 
   return (
     <div className="navbar">

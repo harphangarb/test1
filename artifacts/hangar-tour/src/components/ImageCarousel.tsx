@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PlaneImage } from "@/data/planeImages";
 
 interface Props {
@@ -9,6 +9,16 @@ interface Props {
 export default function ImageCarousel({ images, alt }: Props) {
   const [current, setCurrent] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [isChanging, setIsChanging] = useState(false);
+
+  // Instantly unmount/hide the old image frame when the page changes
+  useEffect(() => {
+    setIsChanging(true);
+    setCurrent(0);
+
+    const timer = setTimeout(() => setIsChanging(false), 30);
+    return () => clearTimeout(timer);
+  }, [images]);
 
   const prev = (e?: React.MouseEvent) => {
     e?.stopPropagation();
@@ -19,12 +29,17 @@ export default function ImageCarousel({ images, alt }: Props) {
     setCurrent(i => (i + 1) % images.length);
   };
 
-  const img = images[current];
+  const img = images[current] || images[0];
+  if (!img) return null;
 
   return (
     <>
       <div className="plane-image-wrap carousel-wrap" onClick={() => setLightboxOpen(true)}>
-        <img src={img.src} alt={alt} className="plane-img" />
+        {!isChanging ? (
+          <img src={img.src} alt={alt} className="plane-img" loading="eager" />
+        ) : (
+          <div className="plane-img-placeholder" style={{ minHeight: '300px', background: '#0A192F' }} />
+        )}
         <div className="plane-image-overlay" />
 
         {images.length > 1 && (
