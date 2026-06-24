@@ -14,30 +14,30 @@ export const planeImages: Record<number, string | PlaneImage[]> = {
   ],
   5: [
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Douglas_C-47_Skytrain.jpg/1200px-Douglas_C-47_Skytrain.jpg",
-      caption: "A Douglas C-47 Skytrain in US Army Air Forces markings. Eisenhower called it one of the weapons that won the war — C-47s carried the 101st Airborne over Normandy on D-Day.",
+      src: "/skytrain-1.jpg",
+      caption: "The C-47 Skytrain as she sits today in Hangar B, marked as a New York Air National Guard aircraft. She's the largest aircraft in the collection — and one of the most storied. You are NOT allowed to enter without a volunteer escort.",
     },
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/C-47s_over_Normandy.jpg/1200px-C-47s_over_Normandy.jpg",
-      caption: "C-47s stream over Normandy on June 6, 1944. Black-and-white invasion stripes were painted overnight in the days before D-Day so Allied gunners could distinguish friendly aircraft in the chaos of the invasion.",
+      src: "/skytrain-2.png",
+      caption: "Serial AF 44-457 in Vietnam-era tri-color camouflage on the flight line. By the 1960s the old Skytrain was still hauling cargo and troops over Southeast Asia — nearly 25 years after her first flight.",
     },
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Douglas_C-47_Skytrain_cockpit_1.jpg/1200px-Douglas_C-47_Skytrain_cockpit_1.jpg",
-      caption: "The C-47 flight deck — a remarkably complex instrument layout for 1941. Pilots who flew the Hump route over the Himalayas did so in cockpits exactly like this, in conditions that defied belief.",
+      src: "/skytrain-3.png",
+      caption: "AF 44-457 undergoing depot maintenance with her engines pulled — a rare look at what it takes to keep a twin-radial workhorse flying. The engines alone weigh over 1,800 lbs each. (Photo: Jonathan Verschuuren Collection / AirHistory.net)",
     },
   ],
   6: [
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Douglas_A-4B_Skyhawk_in_flight_c1960.jpg/1200px-Douglas_A-4B_Skyhawk_in_flight_c1960.jpg",
-      caption: "An A-4B Skyhawk in flight, circa 1960. The Skyhawk's delta wing was so compact that it needed no wing-fold mechanism for carrier storage — a major engineering achievement at the time.",
+      src: "/a4-1.jpg",
+      caption: "The A-4 Skyhawk in Hangar B today, painted in Marine Corps markings. The delta wing you see required no fold mechanism for carrier storage — Douglas engineers made it short enough to fit below deck as-is.",
     },
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/A-4F_Skyhawks_Blue_Angels_in_flight_1974.jpg/1200px-A-4F_Skyhawks_Blue_Angels_in_flight_1974.jpg",
-      caption: "A-4F Skyhawks of the Blue Angels flight demonstration team, 1974. The Skyhawk flew with the Blue Angels from 1974 to 1986 — its agility and predictability made it ideal for formation aerobatics.",
+      src: "/a4-2.png",
+      caption: "BuNo 142829 of VA-164 Ghost Riders in flight over California. VA-164 flew combat missions over North Vietnam from USS Oriskany in 1966 — the same cruise that ended in the devastating Oriskany fire.",
     },
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/A-4E_Skyhawk_VA-163_on_USS_Oriskany_%28CVA-34%29_1967.jpg/1200px-A-4E_Skyhawk_VA-163_on_USS_Oriskany_%28CVA-34%29_1967.jpg",
-      caption: "An A-4E of VA-163 on the deck of USS Oriskany, 1967. Skyhawks flew extensive combat missions over North Vietnam — their small size made them hard to spot from the ground.",
+      src: "/a4-3.png",
+      caption: "BuNo 142829 on the ramp, showing the Skyhawk's remarkably clean lines. That 20mm cannon barrel jutting from the nose was one of five weapons hard-points — a fully loaded A-4 could carry more ordnance than a WWII B-17.",
     },
   ],
   7: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Grumman_G-21_Goose_N1306H.jpg/1200px-Grumman_G-21_Goose_N1306H.jpg",
