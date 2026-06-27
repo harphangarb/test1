@@ -14,8 +14,12 @@ interface Props {
 export default function PlanePage({ page, onNext, onPrev, step, total }: Props) {
   const imgData = planeImages[page.id] ?? null;
   const isYellowPlane = page.id === 3;
-  const showBuno = page.buno && page.buno !== "N/A";
+  // Updated line: explicitly exclude ID 15 from showing BuNo
+  const showBuno = page.buno && page.buno !== "N/A" && page.id !== 15;
   const isCarousel = Array.isArray(imgData);
+
+  // Check if current item should display "Length" instead of "Wingspan" (IDs 8, 10, or 12)
+  const useLengthLabel = page.id === 8 || page.id === 10 || page.id === 12;
 
   return (
     <div className="inner-page">
@@ -55,7 +59,8 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
               <span className="spec-value">{page.specs?.[1]?.value ?? "—"}</span>
             </div>
             <div className="spec-cell">
-              <span className="spec-label">Wingspan</span>
+              {/* Dynamically toggle between Length and Wingspan */}
+              <span className="spec-label">{useLengthLabel ? "Length" : "Wingspan"}</span>
               <span className="spec-value">{page.span ?? "—"}</span>
             </div>
           </div>
@@ -63,7 +68,7 @@ export default function PlanePage({ page, onNext, onPrev, step, total }: Props) 
 
         {page.serviceHistory && (
           <div className="section-block">
-            <h3 className="section-heading">{isYellowPlane ? "OVERVIEW" : "SERVICE HISTORY"}</h3>
+            <h3 className="section-heading">{isYellowPlane ? "OVERVIEW" : "Overview"}</h3>
             <p className="body-text">{page.serviceHistory}</p>
           </div>
         )}
