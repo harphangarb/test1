@@ -59,14 +59,9 @@ export const planeImages: Record<number, string | PlaneImage[]> = {
         "P-2H Neptune at NAS Patuxent River, 1962. This is the same variant that patrolled the waters off Floyd Bennett Field — hunting Soviet submarines lurking along the Eastern Seaboard during the Cold War.",
     },
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Lockheed_SP-2H_Neptune%2C_USA_-_Navy_AN0218931.webp/1200px-Lockheed_SP-2H_Neptune%2C_USA_-_Navy_AN0218931.webp",
+      src: "/2503899.webp",
       caption:
         "An SP-2H Neptune on patrol. Neptune crews dropped sonobuoys and towed magnetic anomaly detectors across thousands of square miles of ocean — often flying 12-hour missions without seeing another aircraft.",
-    },
-    {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Lockheed_P2V-7_Neptune_of_VP-1_in_flight_c1960.webp/1200px-Lockheed_P2V-7_Neptune_of_VP-1_in_flight_c1960.webp",
-      caption:
-        "A P2V-7 Neptune of VP-1 in flight, circa 1960. Note the two auxiliary jet pods under the wings — they could be ignited for a burst of speed during an attack run, an unusual hybrid propulsion system that H.A.R.P. volunteers found fascinating.",
     },
   ],
   12: [
