@@ -249,7 +249,7 @@ export const tourPages: TourPage[] = [
   {
     id: 15,
     phase: "The Fleet",
-    title: "N2S Kaydet",
+    title: "Stearman N2S Kaydet",
     type: "plane",
     buno: "66778",
     span: "32 ft 2 in.",
