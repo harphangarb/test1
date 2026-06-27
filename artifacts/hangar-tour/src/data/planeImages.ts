@@ -28,7 +28,7 @@ export const planeImages: Record<number, string | PlaneImage[]> = {
   ],
   12: [
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Nike_Hercules_2007.webp/1200px-Nike_Hercules_2007.webp",
+      src: "/IMG_20260627_130451 (1) (1).webp",
     },
   ],
   13: [{ src: "/PXL_20260620_170412675.webp" }],
