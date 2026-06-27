@@ -6,11 +6,6 @@ export const planeImages: Record<number, string | PlaneImage[]> = {
     {
       src: "/albatross-1.webp",
     },
-    {
-      src: "/albatross-2.webp",
-      caption:
-        "BuNo 7216 on the ramp in her working days, based out of Miami, FL with the U.S. Coast Guard. The engines are running — she may be minutes from a search-and-rescue mission over the Atlantic.",
-    },
   ],
   5: [
     {
