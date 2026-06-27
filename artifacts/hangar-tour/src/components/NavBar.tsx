@@ -30,17 +30,28 @@ export default function NavBar({
 }: Props) {
   const isFirst = step === 0;
   const isLast = step === total - 1;
+
+  // 1. Get current plane data safely to check its ID property
+  const currentPlaneData = planeImages[step];
+  const currentPlaneId = currentPlaneData && typeof currentPlaneData === 'object' && !Array.isArray(currentPlaneData)
+    ? (currentPlaneData as any).id 
+    : Array.isArray(currentPlaneData) ? currentPlaneData[0]?.id : null;
+
+  // 2. Check if it matches step 19, step 18 (if 0-indexed), or explicit ID 19
+  const isTourFinishStep = step === 19 || step === 18 || currentPlaneId === 19;
+
+  // 3. Swap the label based on the flag
+  const dynamicNextLabel = isTourFinishStep ? "Finish Tour" : nextLabel;
+
   const prev = splitPrev(prevLabel);
-  const next = splitNext(nextLabel);
+  const next = splitNext(dynamicNextLabel);
 
   // Background Preloader Engine
   useEffect(() => {
-    // Determine the upcoming index (plane indexes generally map directly to tour steps)
     const nextStepIndex = step + 1;
     const nextPlaneData = planeImages[nextStepIndex];
 
     if (nextPlaneData) {
-      // Resolve source whether data signature is structured string or image object array
       const targetSrc = Array.isArray(nextPlaneData)
         ? nextPlaneData[0]?.src
         : nextPlaneData;
@@ -67,10 +78,10 @@ export default function NavBar({
         className="nav-next"
         onClick={onNext}
         disabled={isLast}
-        aria-label="Next"
+        aria-label={isTourFinishStep ? "Finish Tour" : "Next"}
       >
         <span className="btn-text">{next.text}</span>
-        <span className="btn-arrow">{next.arrow}</span>
+        {next.arrow && <span className="btn-arrow">{next.arrow}</span>}
       </button>
     </div>
   );
