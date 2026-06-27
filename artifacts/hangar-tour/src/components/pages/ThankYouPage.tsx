@@ -22,7 +22,7 @@ export default function ThankYouPage({ page, onRestart }: Props) {
         <div className="donate-box">
           <p className="donate-heading">SUPPORT H.A.R.P.</p>
           <p className="donate-text">
-            If you can, please consider leaving a donation in the donation box at the exit. 
+            If you want to support H.A.R.P., find out more at the information stand at the entrance/exit or ask a volunteer!
           </p>
           <a
             href="https://www.instagram.com/harphangarb/"
