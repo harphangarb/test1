@@ -40,8 +40,8 @@ export default function NavBar({
   // 2. Check if it matches step 19, step 18 (if 0-indexed), or explicit ID 19
   const isTourFinishStep = step === 19 || step === 18 || currentPlaneId === 19;
 
-  // 3. Swap the label based on the flag
-  const dynamicNextLabel = isTourFinishStep ? "Finish Tour" : nextLabel;
+  // 3. Swap the label to "FINISH TOUR →" if it's the final step
+  const dynamicNextLabel = isTourFinishStep ? "FINISH TOUR →" : nextLabel;
 
   const prev = splitPrev(prevLabel);
   const next = splitNext(dynamicNextLabel);
